@@ -7,7 +7,6 @@ function ovh_call($api,$method,$url,$value = NULL){
   $url = 'https://eu.api.ovh.com/1.0'.$url;
   $api['time'] = time();
   $api['signature'] = '$1$'.sha1($api['secret'].'+'.$api['consumer'].'+'.$method.'+'.$url.'+'.$value.'+'.$api['time']);
-  echo $value.'<br>';
 
   $parameter = array(
     'Content-Type:application/json',
